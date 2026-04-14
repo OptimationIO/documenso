@@ -69,7 +69,7 @@ const distributeEnvelope = async (
   authToken: string,
   envelopeId: string,
 ) => {
-  const recipientEmail = `signer-${Date.now()}@test.documenso.com`;
+  const recipientEmail = `signer-${Date.now()}@test.aplyio.com`;
 
   // Create a SIGNER recipient.
   const recipientsRes = await request.post(`${baseUrl}/envelope/recipient/create-many`, {

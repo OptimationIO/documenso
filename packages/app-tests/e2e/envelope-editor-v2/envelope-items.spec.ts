@@ -320,7 +320,7 @@ test.describe('embedded edit', () => {
 
 test.describe('pending envelope title editing', () => {
   test('edit envelope and item titles on a pending envelope', async ({ page }) => {
-    const recipientEmail = `recipient-${nanoid()}@test.documenso.com`;
+    const recipientEmail = `recipient-${nanoid()}@test.aplyio.com`;
     const { user, team } = await seedUser();
     const pendingDocument = await seedPendingDocument(user, team.id, [recipientEmail], {
       internalVersion: 2,

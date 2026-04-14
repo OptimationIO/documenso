@@ -1,6 +1,6 @@
 ---
 title: Railway
-description: Deploy Documenso on Railway with automatic builds from Git, managed PostgreSQL, and built-in networking. Use the one-click template or manual setup.
+description: Deploy Aplyio on Railway with automatic builds from Git, managed PostgreSQL, and built-in networking. Use the one-click template or manual setup.
 ---
 
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
@@ -22,13 +22,13 @@ Before deploying, you need:
 
 ## One-Click Deploy
 
-The fastest way to deploy Documenso on Railway is using the official template:
+The fastest way to deploy Aplyio on Railway is using the official template:
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/bG6D4p)
 
 This template automatically provisions:
 
-- Documenso application service
+- Aplyio application service
 - PostgreSQL database
 - Required environment variables with secure defaults
 
@@ -74,14 +74,14 @@ This takes approximately 5-10 minutes for the initial build.
 
 Once deployed, Railway provides a URL like `documenso-production.up.railway.app`.
 
-Click the URL in the Railway dashboard to access your Documenso instance.
+Click the URL in the Railway dashboard to access your Aplyio instance.
 
 </Step>
 </Steps>
 
 ## Manual Deployment
 
-If you prefer more control over the setup, deploy Documenso manually:
+If you prefer more control over the setup, deploy Aplyio manually:
 
 {/* prettier-ignore */}
 <Steps>
@@ -92,7 +92,7 @@ If you prefer more control over the setup, deploy Documenso manually:
 - Click "New Project"
 - Select "Deploy from GitHub repo"
 - Connect your GitHub account if not already connected
-- Fork or select the [Documenso repository](https://github.com/documenso/documenso)
+- Fork or select the [Aplyio repository](https://github.com/documenso/documenso)
 
 </Step>
 
@@ -124,7 +124,7 @@ No additional build configuration is needed.
 <Step>
 ### Configure environment variables
 
-Click on the Documenso service and go to the "Variables" tab. Add the following variables:
+Click on the Aplyio service and go to the "Variables" tab. Add the following variables:
 
 **Required variables:**
 
@@ -140,7 +140,7 @@ NEXT_PRIVATE_SMTP_HOST=<your-smtp-host>
 NEXT_PRIVATE_SMTP_PORT=587
 NEXT_PRIVATE_SMTP_USERNAME=<your-smtp-username>
 NEXT_PRIVATE_SMTP_PASSWORD=<your-smtp-password>
-NEXT_PRIVATE_SMTP_FROM_NAME=Documenso
+NEXT_PRIVATE_SMTP_FROM_NAME=Aplyio
 NEXT_PRIVATE_SMTP_FROM_ADDRESS=noreply@yourdomain.com
 ```
 
@@ -199,7 +199,7 @@ NEXT_PRIVATE_DATABASE_URL=${{Postgres.DATABASE_URL}}
 NEXT_PRIVATE_DIRECT_DATABASE_URL=${{Postgres.DATABASE_URL}}
 ```
 
-Documenso runs database migrations automatically on startup.
+Aplyio runs database migrations automatically on startup.
 
 ### Accessing the Database
 
@@ -236,7 +236,7 @@ Railway provides a generated URL by default. To use your own domain:
 <Step>
 ### Generate a domain
 
-- Click on your Documenso service
+- Click on your Aplyio service
 - Go to "Settings" > "Networking"
 - Click "Generate Domain" to get a Railway subdomain, or proceed to add a custom domain
 
@@ -280,7 +280,7 @@ Railway automatically provisions and renews SSL certificates for custom domains.
 
 ## Scaling Options
 
-Railway provides several options for scaling your Documenso deployment:
+Railway provides several options for scaling your Aplyio deployment:
 
 ### Vertical Scaling
 
@@ -289,9 +289,9 @@ Increase resources for your service:
 {/* prettier-ignore */}
 <Steps>
 <Step>
-### Open your Documenso service
+### Open your Aplyio service
 
-In the Railway dashboard, select the Documenso service.
+In the Railway dashboard, select the Aplyio service.
 
 </Step>
 <Step>
@@ -317,7 +317,7 @@ Railway supports horizontal scaling through replicas:
 <Step>
 ### Open service Settings
 
-In the Railway dashboard, select your Documenso service and open "Settings".
+In the Railway dashboard, select your Aplyio service and open "Settings".
 
 </Step>
 <Step>
@@ -335,7 +335,7 @@ Choose how many replicas to run; Railway will load-balance traffic across them.
 </Steps>
 
 <Callout type="warn">
-  Documenso stores sessions in the database, so horizontal scaling works without additional
+  Aplyio stores sessions in the database, so horizontal scaling works without additional
   configuration. However, ensure your database can handle the increased connection load.
 </Callout>
 
@@ -349,7 +349,7 @@ For high-traffic deployments:
 
 ## Cost Estimate
 
-Railway uses usage-based pricing. Estimated monthly costs for Documenso:
+Railway uses usage-based pricing. Estimated monthly costs for Aplyio:
 
 | Tier  | Resources                          | Estimated Cost |
 | ----- | ---------------------------------- | -------------- |
@@ -382,11 +382,11 @@ This is sufficient for testing but not recommended for production.
 
 ## Signing Certificate
 
-Documenso requires a signing certificate to sign documents. On Railway, you can:
+Aplyio requires a signing certificate to sign documents. On Railway, you can:
 
 ### Option 1: Use Generated Certificate (Default)
 
-Documenso generates a self-signed certificate automatically if none is provided. This works for testing but shows generic certificate information in signed documents.
+Aplyio generates a self-signed certificate automatically if none is provided. This works for testing but shows generic certificate information in signed documents.
 
 ### Option 2: Mount Custom Certificate
 
@@ -407,7 +407,7 @@ base64 -i your-cert.p12 | tr -d '\n'
 <Step>
 ### Add environment variables in Railway
 
-In your Documenso service variables, set:
+In your Aplyio service variables, set:
 
 ```bash
 NEXT_PRIVATE_SIGNING_LOCAL_FILE_CONTENTS=<base64-encoded-certificate>

@@ -59,7 +59,7 @@ const createDocumentWithRecipientAndField = async () => {
     expiresIn: null,
   });
 
-  const recipientEmail = `save-template-${Date.now()}@test.documenso.com`;
+  const recipientEmail = `save-template-${Date.now()}@test.aplyio.com`;
 
   // 1. Create envelope with a PDF.
   const payload = {

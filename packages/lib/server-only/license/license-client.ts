@@ -17,7 +17,7 @@ import { env } from '../../utils/env';
 
 const LICENSE_KEY = env('NEXT_PRIVATE_DOCUMENSO_LICENSE_KEY');
 const LICENSE_SERVER_URL =
-  env('INTERNAL_OVERRIDE_LICENSE_SERVER_URL') || 'https://license.documenso.com';
+  env('INTERNAL_OVERRIDE_LICENSE_SERVER_URL') || 'https://license.aplyio.com';
 
 declare global {
   // eslint-disable-next-line no-var

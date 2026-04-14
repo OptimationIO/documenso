@@ -1,6 +1,6 @@
 # Documentation Writing Style Guide
 
-This document defines the writing conventions for Documenso documentation.
+This document defines the writing conventions for Aplyio documentation.
 
 Documentation lives in `apps/docs/` as MDX files and uses [Fumadocs](https://fumadocs.dev).
 
@@ -31,9 +31,9 @@ Documentation lives in `apps/docs/` as MDX files and uses [Fumadocs](https://fum
 
 The docs serve three distinct audiences:
 
-1. **Users** - People using the Documenso web application to send and sign documents
+1. **Users** - People using the Aplyio web application to send and sign documents
 2. **Developers** - Building integrations with the API or SDKs
-3. **Self-hosters** - Running their own Documenso instance
+3. **Self-hosters** - Running their own Aplyio instance
 
 Tailor content to the audience:
 

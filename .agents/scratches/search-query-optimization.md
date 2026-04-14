@@ -13,7 +13,7 @@ The `searchDocumentsWithKeyword` and `searchTemplatesWithKeyword` functions gene
 - Includes `recipients: true` on the result even though only a small subset of fields are needed
 - Fetches all matching rows then filters visibility **in application code**
 
-With 1,000 documents seeded under `medium-account@documenso.com`, this query is noticeably slow.
+With 1,000 documents seeded under `medium-account@aplyio.com`, this query is noticeably slow.
 
 ---
 

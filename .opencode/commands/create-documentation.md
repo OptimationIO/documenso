@@ -3,7 +3,7 @@ description: Generate markdown documentation for a module or feature
 argument-hint: <topic-or-feature>
 ---
 
-You are generating documentation for the Documenso project.
+You are generating documentation for the Aplyio project.
 
 ## Your Task
 

@@ -62,7 +62,7 @@ const createPendingEnvelopeViaApi = async () => {
     expiresIn: null,
   });
 
-  const recipientEmail = `resend-${Date.now()}@test.documenso.com`;
+  const recipientEmail = `resend-${Date.now()}@test.aplyio.com`;
 
   // 1. Create envelope with a PDF.
   const payload = {

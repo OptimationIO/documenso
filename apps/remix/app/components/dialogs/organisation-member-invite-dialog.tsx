@@ -254,9 +254,9 @@ export const OrganisationMemberInviteDialog = ({
 
   const downloadTemplate = () => {
     const data = [
-      { email: 'admin@documenso.com', role: 'Admin' },
-      { email: 'manager@documenso.com', role: 'Manager' },
-      { email: 'member@documenso.com', role: 'Member' },
+      { email: 'admin@aplyio.com', role: 'Admin' },
+      { email: 'manager@aplyio.com', role: 'Manager' },
+      { email: 'member@aplyio.com', role: 'Member' },
     ];
 
     const csvContent =

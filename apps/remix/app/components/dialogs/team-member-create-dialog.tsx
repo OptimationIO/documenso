@@ -202,10 +202,10 @@ export const TeamMemberCreateDialog = ({ trigger, ...props }: TeamMemberCreateDi
                       To be able to add members to a team, you must first add them to the
                       organisation. For more information, please see the{' '}
                       <Link
-                        to="https://docs.documenso.com/users/organisations/members"
+                        to="https://docs.aplyio.com/users/organisations/members"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-documenso-700 hover:text-documenso-600 hover:underline"
+                        className="text-aplyio-700 hover:text-aplyio-600 hover:underline"
                       >
                         documentation
                       </Link>
@@ -346,7 +346,7 @@ export const TeamMemberCreateDialog = ({ trigger, ...props }: TeamMemberCreateDi
                                       <Button
                                         type="button"
                                         variant="link"
-                                        className="h-auto p-0 text-sm font-medium text-documenso-700 hover:text-documenso-600"
+                                        className="h-auto p-0 text-sm font-medium text-aplyio-700 hover:text-aplyio-600"
                                       >
                                         <Trans>Invite them to the organisation first</Trans>
                                       </Button>

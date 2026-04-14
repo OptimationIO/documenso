@@ -8,7 +8,7 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 ## Embedded Signing vs Embedded Authoring
 
-Documenso offers two types of embedding:
+Aplyio offers two types of embedding:
 
 - **Embedded Signing** lets you embed the signing experience in your application. Your users sign documents without leaving your site. Available on Teams Plan and above.
 - **Embedded Authoring** lets you embed document and template _creation and editing_ in your application. This is an [Enterprise](/docs/policies/enterprise-edition) feature (also available as a Platform Plan add-on). See the [Authoring](/docs/developers/embedding/authoring) guide.
@@ -21,11 +21,11 @@ This page covers **embedded signing**. If you need your users to create or edit 
 
 Embedding is available on **Teams Plan** and above, as well as for **Early Adopters** within a team (Early Adopters can create a team for free).
 
-The [Platform Plan](https://documen.so/platform-cta-pricing) adds enhanced customization:
+The [Platform Plan](https://aplyio.com/platform-cta-pricing) adds enhanced customization:
 
 - Custom CSS and styling variables
 - Dark mode controls
-- Removal of Documenso branding
+- Removal of Aplyio branding
 
 ---
 
@@ -81,7 +81,7 @@ import { EmbedSignDocument } from '@documenso/embed-react';
 {/* prettier-ignore */}
 <Steps>
 <Step>
-Navigate to your team's templates in Documenso
+Navigate to your team's templates in Aplyio
 
 ![Team Templates](/embedding/team-templates.png)
 
@@ -89,7 +89,7 @@ Navigate to your team's templates in Documenso
 <Step>
 Click on a direct link template to copy its URL. The token is the last segment of the URL.
 
-For example, `https://app.documenso.com/d/-WoSwWVT-fYOERS2MI37k` has the token `-WoSwWVT-fYOERS2MI37k`.
+For example, `https://app.aplyio.com/d/-WoSwWVT-fYOERS2MI37k` has the token `-WoSwWVT-fYOERS2MI37k`.
 
 If your template is not a direct link template yet, select **Direct Link** from the three-dot menu on the templates table to enable it.
 
@@ -152,7 +152,7 @@ If you prefer not to use any SDK, you can embed signing using [Direct Links](/do
 | Prop                  | Type       | Description                                                      |
 | --------------------- | ---------- | ---------------------------------------------------------------- |
 | `token`               | `string`   | **Required.** The direct template token.                         |
-| `host`                | `string`   | Documenso instance URL. Defaults to `https://app.documenso.com`. |
+| `host`                | `string`   | Aplyio instance URL. Defaults to `https://app.aplyio.com`. |
 | `name`                | `string`   | Pre-fill the signer's name.                                      |
 | `lockName`            | `boolean`  | Prevent the signer from changing their name.                     |
 | `email`               | `string`   | Pre-fill the signer's email.                                     |
@@ -173,7 +173,7 @@ If you prefer not to use any SDK, you can embed signing using [Direct Links](/do
 | Prop                  | Type       | Description                                                      |
 | --------------------- | ---------- | ---------------------------------------------------------------- |
 | `token`               | `string`   | **Required.** The recipient's signing token.                     |
-| `host`                | `string`   | Documenso instance URL. Defaults to `https://app.documenso.com`. |
+| `host`                | `string`   | Aplyio instance URL. Defaults to `https://app.aplyio.com`. |
 | `name`                | `string`   | Pre-fill the signer's name.                                      |
 | `lockName`            | `boolean`  | Prevent the signer from changing their name.                     |
 | `language`            | `string`   | Set the UI language. See [Supported Languages](https://github.com/documenso/documenso/tree/main/packages/lib/constants/locales.ts). |

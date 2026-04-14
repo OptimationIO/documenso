@@ -44,7 +44,7 @@ import {
 const c = initContract();
 
 const deprecatedDescription =
-  'This endpoint is deprecated, but will continue to be supported. For more details, see https://docs.documenso.com/developers/public-api.';
+  'This endpoint is deprecated, but will continue to be supported. For more details, see https://docs.aplyio.com/developers/public-api.';
 
 export const ApiContractV1 = c.router(
   {

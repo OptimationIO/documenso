@@ -3,7 +3,7 @@ name: create-documentation
 description: Generate markdown documentation for a module or feature
 ---
 
-You are creating proper markdown documentation for a feature or guide in the Documenso documentation site.
+You are creating proper markdown documentation for a feature or guide in the Aplyio documentation site.
 
 **Read [WRITING_STYLE.md](../../../WRITING_STYLE.md) first** for tone, formatting conventions, and anti-patterns to avoid.
 
@@ -64,7 +64,7 @@ apps/docs/content/docs/
 
 | Type                | Location                                         | When to use                                        |
 | ------------------- | ------------------------------------------------ | -------------------------------------------------- |
-| **User Guide**      | `apps/docs/content/docs/users/<section>/`        | UI workflows for using the Documenso web app       |
+| **User Guide**      | `apps/docs/content/docs/users/<section>/`        | UI workflows for using the Aplyio web app       |
 | **Developer Guide** | `apps/docs/content/docs/developers/<section>/`   | API reference, SDK guides, webhooks, embedding     |
 | **Self-Hosting**    | `apps/docs/content/docs/self-hosting/<section>/` | Deployment, configuration, environment variables   |
 | **Concept**         | `apps/docs/content/docs/concepts/`               | Cross-audience concepts (document lifecycle, etc.) |
@@ -119,7 +119,7 @@ Every page needs frontmatter:
 ```yaml
 ---
 title: Upload Documents
-description: Upload documents to Documenso to prepare them for signing. Covers supported formats, file size limits, and upload methods.
+description: Upload documents to Aplyio to prepare them for signing. Covers supported formats, file size limits, and upload methods.
 ---
 ```
 
@@ -233,7 +233,7 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 
 <Callout type="warn">
   This guide may not reflect the latest endpoints. For an always up-to-date reference, see the
-  [OpenAPI Reference](https://openapi.documenso.com).
+  [OpenAPI Reference](https://openapi.aplyio.com).
 </Callout>
 
 ## Overview
@@ -250,7 +250,7 @@ Brief description of the resource and what you can do with it.
 ## Create a Resource
 
 ```typescript
-const response = await fetch('https://app.documenso.com/api/v2/document', {
+const response = await fetch('https://app.aplyio.com/api/v2/document', {
   method: 'POST',
   headers: {
     Authorization: 'Bearer YOUR_API_TOKEN',
@@ -276,7 +276,7 @@ const response = await fetch('https://app.documenso.com/api/v2/document', {
 ```mdx
 ---
 title: Environment Variables
-description: Complete reference for all environment variables used to configure Documenso.
+description: Complete reference for all environment variables used to configure Aplyio.
 ---
 
 ## Required Variables

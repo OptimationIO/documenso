@@ -33,7 +33,7 @@ export type CreateTeamOptions = {
   /**
    * Unique URL of the team.
    *
-   * Used as the URL path, example: https://documenso.com/t/{teamUrl}/settings
+   * Used as the URL path, example: https://aplyio.com/t/{teamUrl}/settings
    */
   teamUrl: string;
 

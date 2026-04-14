@@ -1,6 +1,6 @@
 import { prisma } from '@documenso/prisma';
 
-const LEGACY_SERVICE_ACCOUNT_EMAIL = 'serviceaccount@documenso.com';
+const LEGACY_SERVICE_ACCOUNT_EMAIL = 'serviceaccount@aplyio.com';
 
 export const legacyServiceAccountEmail = () => {
   try {

@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-description: Diagnose and resolve common issues with your self-hosted Documenso instance, organized by component.
+description: Diagnose and resolve common issues with your self-hosted Aplyio instance, organized by component.
 ---
 
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
@@ -55,7 +55,7 @@ docker logs --tail 100 documenso
 
 ### Health Checks
 
-Documenso exposes a health endpoint to verify the application is running:
+Aplyio exposes a health endpoint to verify the application is running:
 
 ```bash
 curl http://localhost:3000/api/health
@@ -232,7 +232,7 @@ netstat -tlnp | grep 3000
     Stop the conflicting service
   </Step>
   <Step>
-    Change Documenso's port mapping: `-p 3001:3000`
+    Change Aplyio's port mapping: `-p 3001:3000`
   </Step>
 </Steps>
 
@@ -690,7 +690,7 @@ openssl pkcs12 -in certificate.p12 -nokeys | openssl x509 -noout -dates
     Generate a new certificate or obtain a renewed one from your CA
   </Step>
   <Step>
-    Update the certificate file and restart Documenso
+    Update the certificate file and restart Aplyio
   </Step>
 </Steps>
 
@@ -1115,7 +1115,7 @@ Gather this information before seeking support:
 {/* prettier-ignore */}
 <Steps>
   <Step>
-    **Documenso version:**
+    **Aplyio version:**
 
 ```bash
 docker inspect documenso --format='{{.Config.Image}}'
@@ -1139,7 +1139,7 @@ docker inspect documenso --format='{{.Config.Image}}'
 ### Community Support
 
 - **[GitHub Discussions](https://github.com/documenso/documenso/discussions)**
-- **[Discord](https://documen.so/discord)**: Join the Documenso community Discord
+- **[Discord](https://aplyio.com/discord)**: Join the Aplyio community Discord
 - **[GitHub Issues](https://github.com/documenso/documenso/issues)**: For confirmed bugs, open an issue
 
 ### Reporting Bugs
@@ -1155,7 +1155,7 @@ When reporting bugs, include:
     Steps to reproduce
   </Step>
   <Step>
-    Documenso version
+    Aplyio version
   </Step>
   <Step>
     Relevant logs (redact sensitive information)
@@ -1167,7 +1167,7 @@ When reporting bugs, include:
 
 ### Security Issues
 
-For security vulnerabilities, do not open a public issue. Contact security@documenso.com directly.
+For security vulnerabilities, do not open a public issue. Contact security@aplyio.com directly.
 
 ---
 
