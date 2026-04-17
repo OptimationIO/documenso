@@ -176,7 +176,22 @@ export const signRoute = new Hono<HonoEnv>().get('/', async (c) => {
       }>;
     };
 
-    // 4. Find the signer's signing URL
+    // 4. Send the document (moves from DRAFT to PENDING so signing page works)
+    const sendRes = await fetch(`${baseUrl}/api/v1/documents/${result.documentId}/send`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ sendEmail: false }),
+    });
+
+    if (!sendRes.ok) {
+      const err = await sendRes.text();
+      return c.json(
+        { error: 'Failed to send document', details: err },
+        sendRes.status as 400,
+      );
+    }
+
+    // 5. Find the signer's signing URL
     const signer = result.recipients?.find(
       (r) => r.email.toLowerCase() === email.toLowerCase(),
     );
