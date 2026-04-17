@@ -27,6 +27,7 @@ import { openApiDocument } from '@documenso/trpc/server/open-api';
 import { aiRoute } from './api/ai/route';
 import { downloadRoute } from './api/download/download';
 import { filesRoute } from './api/files/files';
+import { signRoute } from './api/sign/route';
 import { type AppContext, appContext } from './context';
 import { appMiddleware } from './middleware';
 import { openApiTrpcServerHandler } from './trpc/hono-trpc-open-api';
@@ -95,6 +96,9 @@ app.route('/api/files', filesRoute);
 // AI route.
 app.use('/api/ai/*', aiRateLimitMiddleware);
 app.route('/api/ai', aiRoute);
+
+// Sign route (prefill + redirect to signing page).
+app.route('/api/sign', signRoute);
 
 // API servers.
 app.route('/api/v1', tsRestHonoApp);
