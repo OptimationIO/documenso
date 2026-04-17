@@ -212,6 +212,18 @@ export const ZFieldMetaPrefillFieldsSchema = z
         type: z.literal('date'),
         value: z.string().optional(),
       }),
+      z.object({
+        type: z.literal('name'),
+        value: z.string().optional(),
+      }),
+      z.object({
+        type: z.literal('email'),
+        value: z.string().optional(),
+      }),
+      z.object({
+        type: z.literal('signature'),
+        value: z.string().optional(),
+      }),
     ]),
   );
 
