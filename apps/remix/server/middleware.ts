@@ -41,6 +41,7 @@ export const appMiddleware = async (c: Context, next: Next) => {
   if (path.startsWith('/sign/') || path.startsWith('/sign.')) {
     c.header('Content-Security-Policy', "frame-ancestors 'self' https://app.qiiro.io https://*.qiiro.io");
     c.header('Cross-Origin-Resource-Policy', 'cross-origin');
+    c.header('Cross-Origin-Embedder-Policy', 'credentialless');
     c.header('Access-Control-Allow-Origin', '*');
   }
 

@@ -25,6 +25,7 @@ export const signRoute = new Hono<HonoEnv>()
     await next();
     c.header('Access-Control-Allow-Origin', '*');
     c.header('Cross-Origin-Resource-Policy', 'cross-origin');
+    c.header('Cross-Origin-Embedder-Policy', 'credentialless');
   })
   .get('/', async (c) => {
   const url = new URL(c.req.url);
