@@ -20,7 +20,13 @@ import type { HonoEnv } from '../../router';
  *   - redirect (optional): "false" to return JSON instead of redirecting
  *   - field_<FIELD_ID>=<value>: Prefill a specific field by its numeric ID
  */
-export const signRoute = new Hono<HonoEnv>().get('/', async (c) => {
+export const signRoute = new Hono<HonoEnv>()
+  .use('*', async (c, next) => {
+    await next();
+    c.header('Access-Control-Allow-Origin', '*');
+    c.header('Cross-Origin-Resource-Policy', 'cross-origin');
+  })
+  .get('/', async (c) => {
   const url = new URL(c.req.url);
   const params = url.searchParams;
 
