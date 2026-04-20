@@ -13,7 +13,7 @@ import type { HonoEnv } from '../../router';
  * Query params:
  *   - template (required): Template ID
  *   - name (required): Signer's full name
- *   - email (required): Signer's email
+ *   - email (optional): Signer's email — uses a placeholder if omitted
  *   - token (required): API token for authentication
  *   - address (optional): Fills TEXT fields labeled "Address"
  *   - date (optional): Fills all DATE fields
@@ -39,16 +39,19 @@ export const signRoute = new Hono<HonoEnv>()
   const shouldRedirect = params.get('redirect') !== 'false';
   const apiToken = params.get('token');
 
-  if (!templateId || !name || !email) {
+  if (!templateId || !name) {
     return c.json(
       {
-        error: 'Missing required params: template, name, email',
+        error: 'Missing required params: template, name',
         usage:
-          'GET /api/sign?template=TEMPLATE_ID&name=John+Doe&email=john@example.com&token=API_TOKEN',
+          'GET /api/sign?template=TEMPLATE_ID&name=John+Doe&token=API_TOKEN',
       },
       400,
     );
   }
+
+  // Use provided email or a placeholder
+  const signerEmail = email || `signer+${Date.now()}@qiiro.io`;
 
   if (!apiToken) {
     return c.json({ error: 'Missing required param: token (API token)' }, 401);
@@ -155,7 +158,7 @@ export const signRoute = new Hono<HonoEnv>()
             {
               id: signerRecipient.id,
               name,
-              email,
+              email: signerEmail,
               role: 'SIGNER',
             },
           ],
@@ -200,7 +203,7 @@ export const signRoute = new Hono<HonoEnv>()
 
     // 5. Find the signer's signing URL
     const signer = result.recipients?.find(
-      (r) => r.email.toLowerCase() === email.toLowerCase(),
+      (r) => r.email.toLowerCase() === signerEmail.toLowerCase(),
     );
 
     const signingUrl = signer?.signingUrl;
