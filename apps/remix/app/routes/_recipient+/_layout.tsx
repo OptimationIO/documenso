@@ -11,12 +11,6 @@ import { GenericErrorLayout } from '~/components/general/generic-error-layout';
 
 import type { Route } from './+types/_layout';
 
-export function headers() {
-  return {
-    'Content-Security-Policy': "frame-ancestors 'self' https://app.qiiro.io https://*.qiiro.io",
-  };
-}
-
 /**
  * A layout to handle scenarios where the user is a recipient of a given resource
  * where we do not care whether they are authenticated or not.

@@ -37,6 +37,11 @@ export const appMiddleware = async (c: Context, next: Next) => {
 
   await next();
 
+  // Allow signing pages to be iframed by qiiro.io domains.
+  if (path.startsWith('/sign/') || path.startsWith('/sign.')) {
+    c.header('Content-Security-Policy', "frame-ancestors 'self' https://app.qiiro.io https://*.qiiro.io");
+  }
+
   // POST-HANDLER CODE: Place code here to execute AFTER the route handler completes.
   // This is useful for:
   // - Setting cookies
