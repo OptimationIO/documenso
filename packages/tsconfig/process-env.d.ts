@@ -17,6 +17,8 @@ declare namespace NodeJS {
     NEXT_PRIVATE_ENCRYPTION_KEY: string;
     NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY: string;
 
+    NEXT_PRIVATE_SIGN_API_TOKEN?: string;
+
     NEXT_PRIVATE_LOGGER_FILE_PATH?: string;
 
     NEXT_PRIVATE_STRIPE_API_KEY: string;
