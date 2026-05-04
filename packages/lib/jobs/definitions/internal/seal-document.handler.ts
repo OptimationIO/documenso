@@ -318,21 +318,9 @@ export const run = async ({
     };
   });
 
-  await io.runTask('send-completed-email', async () => {
-    let shouldSendCompletedEmail = sendEmail && !isResealing && !isRejected;
-
-    if (isResealing && !isDocumentCompleted(envelopeStatus)) {
-      shouldSendCompletedEmail = sendEmail;
-    }
-
-    if (shouldSendCompletedEmail) {
-      await sendCompletedEmail({
-        id: { type: 'envelopeId', id: envelopeId },
-        requestMetadata,
-      });
-    }
-  });
-
+  // Fire the webhook before sending the completion email. Webhook delivery
+  // is the system-of-record for downstream integrations, so it shouldn't be
+  // gated behind a (potentially flaky) outbound email step.
   const updatedEnvelope = await prisma.envelope.findFirstOrThrow({
     where: {
       id: envelopeId,
@@ -350,6 +338,32 @@ export const run = async ({
     data: ZWebhookDocumentSchema.parse(mapEnvelopeToWebhookDocumentPayload(updatedEnvelope)),
     userId: updatedEnvelope.userId,
     teamId: updatedEnvelope.teamId ?? undefined,
+  });
+
+  await io.runTask('send-completed-email', async () => {
+    let shouldSendCompletedEmail = sendEmail && !isResealing && !isRejected;
+
+    if (isResealing && !isDocumentCompleted(envelopeStatus)) {
+      shouldSendCompletedEmail = sendEmail;
+    }
+
+    if (!shouldSendCompletedEmail) {
+      return;
+    }
+
+    // Swallow email failures so a misconfigured SMTP / rejected sender
+    // doesn't fail the whole seal job (and prevent later steps from running).
+    try {
+      await sendCompletedEmail({
+        id: { type: 'envelopeId', id: envelopeId },
+        requestMetadata,
+      });
+    } catch (err) {
+      console.error('[seal-document] sendCompletedEmail failed', {
+        envelopeId,
+        error: err instanceof Error ? err.message : String(err),
+      });
+    }
   });
 };
 
